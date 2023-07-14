@@ -20,7 +20,7 @@ public class ParkingSpotModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(nullable = false, unique = true, length = 10)
-    private String parkingSportNumber;
+    private String parkingSpotNumber;
     @Column(nullable = false, unique = true, length = 7)
     private String licensePlateCar;
     @Column(nullable = false, length = 70)
@@ -29,7 +29,7 @@ public class ParkingSpotModel implements Serializable {
     private String modelCar;
     @Column(nullable = false, length = 70)
     private String colorCar;
-    @Column(nullable = false)
+    @Column(nullable = true)
     private LocalDateTime registrationDate;
     @Column(nullable = false, length = 130)
     private String responsibleName;
@@ -47,12 +47,12 @@ public class ParkingSpotModel implements Serializable {
         this.id = id;
     }
 
-    public String getParkingSportNumber() {
-        return this.parkingSportNumber;
+    public String getParkingSpotNumber() {
+        return this.parkingSpotNumber;
     }
 
-    public void setParkingSportNumber(String parkingSportNumber) {
-        this.parkingSportNumber = parkingSportNumber;
+    public void setParkingSpotNumber(String parkingSportNumber) {
+        this.parkingSpotNumber = parkingSportNumber;
     }
 
     public String getLicensePlateCar() {
@@ -87,12 +87,12 @@ public class ParkingSpotModel implements Serializable {
         this.colorCar = colorCar;
     }
 
-    public LocalDateTime getRegistrationDate() {
+    public LocalDateTime getRegistrationDate() {       
         return this.registrationDate;
     }
 
     public void setRegistrationDate(LocalDateTime registrationDate) {
-        this.registrationDate = registrationDate;
+        this.registrationDate = registrationDate; 
     }
 
     public String getResponsibleName() {
